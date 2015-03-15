@@ -34,7 +34,10 @@ public class LDFActivity extends ActionBarActivity implements ActionBar.TabListe
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         LDFScheduleFragment scheduleFragment = new LDFScheduleFragment();
-        fragmentTransaction.add(android.R.id.content, scheduleFragment).addToBackStack(null).commit();
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.add(android.R.id.content, scheduleFragment)
+        .commit();
 
 
  /*       final ActionBar actionBar = getActionBar();
@@ -123,8 +126,8 @@ public class LDFActivity extends ActionBarActivity implements ActionBar.TabListe
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         LDFListFragment listFragment = new LDFListFragment();
-
-        fragmentTransaction.replace(android.R.id.content, listFragment, "list");
+      //  fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        fragmentTransaction.replace(android.R.id.content, listFragment, "list").addToBackStack(null);
 
         fragmentTransaction.commit();
 
