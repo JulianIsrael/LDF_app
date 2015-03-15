@@ -11,4 +11,21 @@
         Donec dignissim tortor at felis fringilla, sed dignissim diam vulputate. Nam sit amet facilisis massa. Suspendisse posuere quam quis augue dapibus venenatis.
         sdsdfsdfsdfsdfgsdfgsdfgsfdgsfgsdfsdfgsdfgsdfgsdfgsdgsfdgsdfgsdfg"</string>
 
+
+    <string name="title_option_detail">Option Detail</string>
+    <string name="main_menu_item">Main Menu Options Item</string>
+    <string name="title_activity_report">ReportActivity</string>
+    <string name="title_section1">1</string>
+    <string name="title_section2">2</string>
+    <string name="title_section3">3</string>
+    <string name="title_section4">4</string>
+    <string name="title_section5">5</string>
+    <string name="title_section6">6</string>
+    <string name="title_section7">7</string>
+    <string name="title_section8">8</string>
+    <string name="title_section9">9</string>
+    <string name="title_section10">10</string>
+   
+    <string name="save_report">Guardar</string>
+
 </resources>

@@ -1,6 +1,7 @@
 package com.ntv.ldf_app;
 
-import android.support.v4.app.Fragment;
+
+import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,14 +19,14 @@ import java.util.zip.Inflater;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class LDFActivityFragment extends Fragment {
+public class LDFListFragment extends Fragment {
 
     private final int CELL_DEFAULT_HEIGHT = 200;
     private final int NUM_OF_CELLS = 30;
 
     private ExpandingListView mListView;
 
-    public LDFActivityFragment() {
+    public LDFListFragment() {
     }
 
     @Override
