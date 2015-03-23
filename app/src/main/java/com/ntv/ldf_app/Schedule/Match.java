@@ -1,5 +1,7 @@
 package com.ntv.ldf_app.Schedule;
 
+import com.ntv.ldf_app.AppConstants.AppConstant;
+
 import java.util.Arrays;
 import java.util.Date;
 
@@ -8,71 +10,31 @@ import java.util.Date;
  */
 public class Match {
 
-    String mTeam1, mTeam2, mStadium;
-    int[] mTeamImages;
-    Date mTime;
-    boolean mTv;
-    int mMatchID;
+    private final int mMatchID;
+    private String mStadium, mTime;
+    private boolean mTv;
+    private Team mTeam1, mTeam2;
 
-    public Match(String mTeam1, String mTeam2, String mStadium) {
+    public Match(int mID, Team mTeam1, Team mTeam2) {
+        this.mMatchID = mID ;
         this.mTeam1 = mTeam1;
         this.mTeam2 = mTeam2;
-        this.mStadium = mStadium;
-        this.mTeamImages = new int[2];
         this.mTv = false;
+        onCreateMatch();
     }
 
-    public int getmMatchID() {
-        return mMatchID;
-    }
+     /*
+     *   setters & getters
+     */
 
-    public void setmMatchID(int mMatchID) {
-        this.mMatchID = mMatchID;
-    }
-
-    public Date getmTime() {
-        return mTime;
-    }
-
-    public void setmTime(Date mTime) {
+    private void setmTime(String mTime) {
         this.mTime = mTime;
     }
 
-    public int[] getmTeamImages() {
-        return mTeamImages;
-    }
+    /*
+     *Public Object functions
+    */
 
-    public void setmTeamImages(int[] mTeamImages) {
-        this.mTeamImages = mTeamImages;
-    }
-
-    public String getmStadium() {
-        return mStadium;
-    }
-
-    public void setmStadium(String mStadium) {
-        this.mStadium = mStadium;
-    }
-
-    public String getmTeam2() {
-        return mTeam2;
-    }
-
-    public void setmTeam2(String mTeam2) {
-        this.mTeam2 = mTeam2;
-    }
-
-    public String getmTeam1() {
-        return mTeam1;
-    }
-
-    public void setmTeam1(String mTeam1) {
-        this.mTeam1 = mTeam1;
-    }
-
-
-
-    // Object functions
     public  void onChangeTv(){
         this.mTv = !this.mTv;
     }
@@ -82,7 +44,38 @@ public class Match {
     }
 
     public int getTeamImage(int index){
-      return  this.mTeamImages[index];
+        int image = 0;
+        switch (index){
+            case 1:
+            image = mTeam1.getmTeamImage();
+                break;
+
+            case 2:
+                image = mTeam2.getmTeamImage();
+                break;
+        }
+
+        return image;
+    }
+
+    /*
+     *Private Object functions
+    */
+
+    private void onCreateMatch(){
+
+        onCreateTime();
+        onCreateStadium();
+    }
+
+
+    /** HARD CODED: AUTOMATE **/
+    private void onCreateTime(){
+        setmTime("4:00pm");
+    }
+
+    private void onCreateStadium(){
+       this.mStadium = mTeam1.getmStadium();
     }
 
 
@@ -93,7 +86,7 @@ public class Match {
                 "mTeam1='" + mTeam1 + '\'' +
                 ", mTeam2='" + mTeam2 + '\'' +
                 ", mStadium='" + mStadium + '\'' +
-                ", mTeamImages=" + Arrays.toString(mTeamImages) +
+
                 ", mTime=" + mTime +
                 ", mTv=" + mTv +
                 '}';
