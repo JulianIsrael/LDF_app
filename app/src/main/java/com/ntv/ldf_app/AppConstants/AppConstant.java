@@ -81,16 +81,16 @@ public class AppConstant {
                 }
         };
 
-        public static String[][] mMatchArrayList = {
+        public static int[][][] mMatchArrayList = {
                 {
-                        "0", "0", "1"
+                        { 0,0, 1},{ 0, 0, 1},{ 0, 0, 1}
                 },
 
                 {
-                        "1", "2", "3"
+                        { 0,0, 1},{ 0, 0, 1},{ 0, 0, 1}
                 },
                 {
-                        "2", "4" , "5"
+                        { 0,0, 1},{ 0, 0, 1},{ 0, 0, 1}
                 },
 
         };
