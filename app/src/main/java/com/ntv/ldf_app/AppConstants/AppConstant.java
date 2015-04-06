@@ -10,19 +10,19 @@ public class AppConstant {
 
    public static String[][] mTeamArrayList = {
            {
-                   "0", "Club Atletico Pantoja", "Olimpico Félix Sánchez" , "PROFILE"
+                   "0", "Atletico Pantoja", "Olimpico Felix Sánchez" , "PROFILE"
            },
            {
-                   "1", "O&M Fútbol Club", "Olimpico Félix Sánchez" , "PROFILE"
+                   "1", "O&M FC", "Olimpico Félix Sánchez" , "PROFILE"
            },
            {
-                   "2", "Moca Fútbol Club", " Bragaña García, Moca" , "PROFILE"
+                   "2", "Moca FC", " Bragaña García, Moca" , "PROFILE"
            },
            {
-                   "3", "Cibao Fútbol Club", "Estadio Cibao FC" , "PROFILE"
+                   "3", "Cibao FC", "Estadio Cibao FC" , "PROFILE"
            },
            {
-                   "4", "Club Barcelona Atlético", "Olimpico Félix Sánchez" , "PROFILE"
+                   "4", "Barcelona Atlético", "Olimpico Félix Sánchez" , "PROFILE"
            },
            {
                    "5", "Delfines del Este FC", "Estadio Francisco Micheli" , "PROFILE"
@@ -31,72 +31,120 @@ public class AppConstant {
                    "6", "Atlético San Cristóbal", "Panamericano, San Cristóbal " , "PROFILE"
            },
            {
-                   "7", "Atlántico Fútbol Club", "Estadio Leonel Plácido " , "PROFILE"
+                   "7", "Atlántico FC", "Estadio Leonel Plácido " , "PROFILE"
            },
            {
                    "8", "Atlético Vega Real", "Estadio Olímpico, La Vega " , "PROFILE"
            },
            {
-                   "9",  "Bauger Fútbol Club", "Olímpico Félix Sánchez " , "PROFILE"
+                   "9",  "Bauger FC", "Olímpico Félix Sánchez " , "PROFILE"
            },
            {
-                   "10", "Romana Fútbol Club", "Estadio Francisco Micheli " , "PROFILE"
+                   "10", "Romana FC", "Estadio Francisco Micheli " , "PROFILE"
            }
 
     };
 
         public static String[][] mTeamPlayerArrayList = {
                 {
-                        "0",  "player0", "#0"
+                        "0",  "player0", "0"
                 },
                 {
-                        "1", "player1", "#1"
+                        "1", "player1", "1"
                 },
                 {
-                        "2", "player2", "#2"
+                        "2", "player2", "2"
                 },
                 {
-                        "3", "player3", "#3"
+                        "3", "player3", "3"
                 },
                 {
-                        "4",  "player4", "#4"
+                        "4",  "player4", "4"
                 },
                 {
-                        "5",  "player5", "#5"
+                        "5",  "player5", "5"
                 },
                 {
-                        "6",  "player6", "#6"
+                        "6",  "player6", "6"
                 },
                 {
-                        "7",  "player7", "#7"
+                        "7",  "player7", "7"
                 },
                 {
-                        "8",  "player8", "#8"
+                        "8",  "player8", "8"
                 },
                 {
-                        "9",  "player9", "#9"
+                        "9",  "player9", "9"
                 },
                 {
-                        "10",  "player10", "#10"
+                        "10",  "player10", "10"
                 }
         };
 
         public static int[][][] mMatchArrayList = {
                 {
-                        { 0,0, 1},{ 0, 0, 1},{ 0, 0, 1}
+                        { 0,5, 1},{ 0, 4, 3},{ 0, 0, 1}
+                },
+              //  "5", "Delfines del Este FC""O&M Fútbol Club"
+                {
+                        { 1,1, 2},{ 1, 0, 1},{ 1, 0, 1}
+                },
+                {
+                        { 2,0, 1},{ 2, 0, 1},{ 2, 0, 1}
+                },
+                {
+                        { 3,0, 1},{ 3, 0, 1},{ 3, 0, 1}
                 },
 
                 {
-                        { 0,0, 1},{ 0, 0, 1},{ 0, 0, 1}
+                        { 4,0, 1},{ 4, 0, 1},{ 4, 0, 1}
                 },
                 {
-                        { 0,0, 1},{ 0, 0, 1},{ 0, 0, 1}
+                        { 5,0, 1},{ 5, 0, 1},{ 5, 0, 1}
+                },
+                {
+                        { 6,0, 1},{ 6, 0, 1},{ 6, 0, 1}
+                },
+
+                {
+                        { 7,0, 1},{ 7, 0, 1},{ 7, 0, 1}
                 },
 
         };
 
+        public static String[][][] mMatchTimeDateArray = {
+
+                {
+                        { "23/04"},{ "24/04"},{ "24/04"}
+                },
+                {
+                        { "13/04"},{ "34/04"},{ "24/04"}
+                },
+                {
+                        { "33/04"},{ "34/04"},{ "24/04"}
+                },
+                {
+                        { "23/04"},{ "24/04"},{ "24/04"}
+                },
+                {
+                        { "23/04"},{ "24/04"},{ "24/04"}
+                },
+                {
+                        { "23/04"},{ "24/04"},{ "24/04"}
+                },
+                {
+                        { "23/04"},{ "24/04"},{ "24/04"}
+                },
+                {
+                        { "23/04"},{ "24/04"},{ "24/04"}
+                },
+                {
+                        { "23/04"},{ "24/04"},{ "24/04"}
+                },
+        };
+
         public static int[] mImageList = {
-                R.mipmap.bauger_fc,
+                R.mipmap.atletico_vega_real,
                 R.mipmap.ic_launcher,
                 R.mipmap.atletico_vega_real,
                 R.mipmap.bauger_fc,

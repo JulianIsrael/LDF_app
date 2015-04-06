@@ -43,8 +43,9 @@ public class LDFScheduleFragment extends Fragment {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        mViewPager.setOffscreenPageLimit(10);
+        mViewPager.setOffscreenPageLimit(3);
         setRetainInstance(true);
+       // setRetainInstance(true);
 
         // When swiping between different sections, select the corresponding
         // tab. We can also use ActionBar.Tab#select() to do this if we have
@@ -83,11 +84,11 @@ public class LDFScheduleFragment extends Fragment {
             // Return a PlaceholderFragment (defined as a static inner class below).
 
             String tag = makeFragmentName(mViewPager.getId(),(int) getItemId(position));
-            LDFScheduleContent ldfScheduleFragment =   LDFScheduleContent.newInstance(position + 1);
+            LDFScheduleContent ldfScheduleContent =   LDFScheduleContent.newInstance(position + 1);
 
-            mPageReferenceMap.put(tag, ldfScheduleFragment);
+            mPageReferenceMap.put(tag, ldfScheduleContent);
 
-            return  ldfScheduleFragment;
+            return  ldfScheduleContent;
 
         }
 
@@ -108,7 +109,7 @@ public class LDFScheduleFragment extends Fragment {
         @Override
         public int getCount() {
             // Show 10 total pages.
-            return 10;
+            return 3;
         }
 
         @Override

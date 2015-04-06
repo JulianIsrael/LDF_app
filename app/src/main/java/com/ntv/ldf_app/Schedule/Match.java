@@ -2,7 +2,9 @@ package com.ntv.ldf_app.Schedule;
 
 import com.ntv.ldf_app.AppConstants.AppConstant;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -11,7 +13,7 @@ import java.util.Date;
 public class Match {
 
     private final int mMatchID;
-    private String mStadium, mTime;
+    private String mStadium, mTime, mDate;
     private boolean mTv;
     private Team mTeam1, mTeam2;
 
@@ -29,6 +31,21 @@ public class Match {
 
     private void setmTime(String mTime) {
         this.mTime = mTime;
+    }
+    public void setDate(String date) {
+        this.mDate = date;
+    }
+
+    public String getStadium(){
+        return this.mStadium;
+    }
+
+    public String getTime() {
+        return  this.mTime;
+    }
+
+    public String getDate(){
+        return this.mDate;
     }
 
     /*
@@ -58,6 +75,21 @@ public class Match {
         return image;
     }
 
+    public String getTeamName(int index){
+        String name = null;
+        switch (index){
+            case 1:
+                name = mTeam1.getmName();
+                break;
+
+            case 2:
+                name = mTeam2.getmName();
+                break;
+        }
+
+        return name;
+    }
+
     /*
      *Private Object functions
     */
@@ -66,6 +98,7 @@ public class Match {
 
         onCreateTime();
         onCreateStadium();
+ //       onCreateDate();
     }
 
 
@@ -78,6 +111,14 @@ public class Match {
        this.mStadium = mTeam1.getmStadium();
     }
 
+ /*   private void onCreateDate(){
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+
+        String formattedDate = df.format(c.getTime());
+        this.mDate = formattedDate;
+    }
+*/
 
     //to String
     @Override

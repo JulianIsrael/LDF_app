@@ -1,28 +1,22 @@
 package com.ntv.ldf_app;
 
 import android.app.ActionBar;
-import android.app.Fragment;
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
-import android.support.annotation.Nullable;
-
-import android.support.v13.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-
-public class LDFActivity extends ActionBarActivity implements ActionBar.TabListener
+public class LDFActivity extends Activity implements ActionBar.TabListener
 {
-
+   static LDFScheduleFragment scheduleFragment = new LDFScheduleFragment();
+   static LDFListFragment teamListFragment = new LDFListFragment();
 
 
     @Override
@@ -31,13 +25,10 @@ public class LDFActivity extends ActionBarActivity implements ActionBar.TabListe
         setContentView(R.layout.activity_ldf);
 
 
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        LDFScheduleFragment scheduleFragment = new LDFScheduleFragment();
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        fragmentTransaction.add(android.R.id.content, scheduleFragment)
-        .commit();
+       FragmentTransaction mFragmentTransaction = getFragmentManager().beginTransaction();
+   //     mFragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        mFragmentTransaction.add(android.R.id.content, scheduleFragment, "schedule");
+        mFragmentTransaction.addToBackStack(null).commit();
 
 
  /*       final ActionBar actionBar = getActionBar();
@@ -121,20 +112,24 @@ public class LDFActivity extends ActionBarActivity implements ActionBar.TabListe
 
     }
 
+/*    @Override
+    public void onBackPressed(){
+        FragmentManager fm = getFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            Log.i("MainActivity", "popping backstack");
+            fm.popBackStack();
+        } else {
+            Log.i("MainActivity", "nothing on backstack, calling super");
+            super.onBackPressed();
+        }
+    }*/
+
     public void  onClickTeamList(View v){
-
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        LDFListFragment listFragment = new LDFListFragment();
-      //  fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-        fragmentTransaction.replace(android.R.id.content, listFragment, "list").addToBackStack(null);
-
-        fragmentTransaction.commit();
-
+        FragmentTransaction mFragmentTransaction = getFragmentManager().beginTransaction();
+        mFragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        mFragmentTransaction.add(android.R.id.content, teamListFragment, "teamList");
+        mFragmentTransaction.hide(scheduleFragment).addToBackStack(null).commit();
     }
-
-
-
 
 
 

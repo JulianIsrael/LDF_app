@@ -82,9 +82,7 @@ public class Team {
         return mStadium;
     }
 
-    public String getmProfile() {
-        return mProfile;
-    }
+
 
     public int getmPJ() {
         return mPJ;

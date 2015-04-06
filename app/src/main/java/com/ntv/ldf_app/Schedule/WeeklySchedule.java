@@ -42,24 +42,30 @@ public class WeeklySchedule {
         this.mWeeklyMatch.add(match);
     }
 
+
+
     public void onCreateMatchList(){
         List<Match> xMatch = new ArrayList<Match>();
         setmWeeklyMatch(xMatch);
     }
 
     private void onCreateSchedule(){
-        for (int i = 0; i < AppConstant.mMatchArrayList.length; i++) {
-            if( AppConstant.mMatchArrayList[i][0][0] == mWeeklyScheduleID){
-                 for (int j = 0; j < AppConstant.mMatchArrayList[i][j].length; j++) {
-                     Team team1 = new Team(AppConstant.mMatchArrayList[i][j][2]);
-                     Team team2 = new Team(AppConstant.mMatchArrayList[i][j][3]);
+        for (int i = 0; i < AppConstant.mMatchArrayList.length ; i++) {
+            if( AppConstant.mMatchArrayList[i][0][0] == mWeeklyScheduleID -1){
+                 for (int j = 0; j < AppConstant.mMatchArrayList[i].length  ; j++) {
+                     Team team1 = new Team(AppConstant.mMatchArrayList[i][j][1]);
+                     Team team2 = new Team(AppConstant.mMatchArrayList[i][j][2]);
                      Match myMatch = new Match(mWeeklyScheduleID, team1, team2);
-               setMatch(myMatch);
+                     myMatch.setDate(AppConstant.mMatchTimeDateArray[i][j][0]);
+                     setMatch(myMatch);
                     }
             }
         }
     }
 
+    private void onCreateDate(){
+
+    }
 
     @Override
     public String toString() {

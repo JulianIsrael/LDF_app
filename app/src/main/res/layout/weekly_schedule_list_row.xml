@@ -1,52 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="10dp">
 
-
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="VS"
-        android:id="@+id/vs_id"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal" />
+        android:layout_alignParentEnd="false"
+        android:background="@color/bright_foreground_disabled_material_dark"
+        android:gravity="center"
+        android:id="@+id/linearLayout">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|left"
+            android:layout_alignTop="@+id/vs_id"
+            android:layout_alignParentStart="false"
+            android:layout_toStartOf="@+id/vs_id">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/image_team1"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="team1"
+                android:id="@+id/team_1_id" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="VS"
+            android:id="@+id/vs_id"
+            android:layout_gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|right"
+            android:layout_alignTop="@+id/vs_id"
+            android:layout_alignParentEnd="false"
+            android:layout_toEndOf="@+id/vs_id">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="team2"
+                android:id="@+id/team_2_id"
+                android:singleLine="false" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/image_team2"
+                android:layout_margin="10dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="team2"
-        android:id="@+id/team_2_id"
-        android:layout_gravity="right"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/vs_id" />
+        android:layout_below="@+id/linearLayout"
+        android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="team1"
-        android:id="@+id/team_1_id"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/vs_id" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="12:00 PM"
+            android:id="@+id/time"
+            android:layout_alignTop="@+id/stadium"
+            android:layout_toStartOf="@+id/stadium"
+            android:layout_margin="5dp" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/image_team1"
-        android:layout_below="@+id/vs_id"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/image_team2"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/team_2_id"
-        android:cropToPadding="true" />
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="La Cañita"
+            android:id="@+id/stadium"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp" />
+    </LinearLayout>
 
 </RelativeLayout>
