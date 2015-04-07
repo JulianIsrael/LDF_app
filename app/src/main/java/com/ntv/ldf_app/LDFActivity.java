@@ -12,8 +12,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
-public class LDFActivity extends Activity implements ActionBar.TabListener
+public class LDFActivity extends ActionBarActivity implements ActionBar.TabListener
 {
    static LDFScheduleFragment scheduleFragment = new LDFScheduleFragment();
    static LDFListFragment teamListFragment = new LDFListFragment();
@@ -31,42 +32,8 @@ public class LDFActivity extends Activity implements ActionBar.TabListener
         mFragmentTransaction.addToBackStack(null).commit();
 
 
- /*       final ActionBar actionBar = getActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
-        // mSectionsPagerAdapter.notifyDataSetChanged();
-
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-        mViewPager.setOffscreenPageLimit(10);
-
-        // When swiping between different sections, select the corresponding
-        // tab. We can also use ActionBar.Tab#select() to do this if we have
-        // a reference to the Tab.
-        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-            @Override
-            public void onPageSelected(int position) {
-              */
-/*  actionBar.setSelectedNavigationItem(position);*//*
-
-            }
-        });
-
-        // For each of the sections in the app, add a tab to the action bar.
-        for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
-            // Create a tab with text corresponding to the page title defined by
-            // the adapter. Also specify this Activity object, which implements
-            // the TabListener interface, as the callback (listener) for when
-            // this tab is selected.
-            actionBar.addTab(
-                    actionBar.newTab()
-                            .setText(mSectionsPagerAdapter.getPageTitle(i))
-                            .setTabListener(this));
-        }
-*/
-
+    /*   final ActionBar actionBar = getActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);*/
 
 
     }
@@ -112,7 +79,7 @@ public class LDFActivity extends Activity implements ActionBar.TabListener
 
     }
 
-/*    @Override
+   @Override
     public void onBackPressed(){
         FragmentManager fm = getFragmentManager();
         if (fm.getBackStackEntryCount() > 0) {
@@ -122,15 +89,16 @@ public class LDFActivity extends Activity implements ActionBar.TabListener
             Log.i("MainActivity", "nothing on backstack, calling super");
             super.onBackPressed();
         }
-    }*/
+    }
 
-    public void  onClickTeamList(View v){
+    public void onButtonClicked(View view){
+
         FragmentTransaction mFragmentTransaction = getFragmentManager().beginTransaction();
         mFragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         mFragmentTransaction.add(android.R.id.content, teamListFragment, "teamList");
         mFragmentTransaction.hide(scheduleFragment).addToBackStack(null).commit();
+
+
     }
-
-
 
 }

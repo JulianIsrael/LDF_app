@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.melnykov.fab.FloatingActionButton;
+
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -24,6 +26,7 @@ public class LDFScheduleFragment extends Fragment {
 
     ViewPager mViewPager;
     SectionsPagerAdapter mSectionsPagerAdapter;
+    private com.melnykov.fab.FloatingActionButton newBtn;
 
     public LDFScheduleFragment() {
     }
@@ -45,8 +48,9 @@ public class LDFScheduleFragment extends Fragment {
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setOffscreenPageLimit(3);
         setRetainInstance(true);
-       // setRetainInstance(true);
 
+        newBtn = (com.melnykov.fab.FloatingActionButton) rootView.findViewById(R.id.fab);
+        newBtn.setType(FloatingActionButton.TYPE_MINI);
         // When swiping between different sections, select the corresponding
         // tab. We can also use ActionBar.Tab#select() to do this if we have
         // a reference to the Tab.

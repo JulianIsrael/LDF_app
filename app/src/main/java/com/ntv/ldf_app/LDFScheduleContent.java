@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.ntv.ldf_app.Adapters.ScheduleAdapter;
 
@@ -51,10 +52,14 @@ public class LDFScheduleContent extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.fragment_schedule_content, container, false);
+        Bundle arg = getArguments();
+        int index = arg.getInt(ARG_SECTION_NUMBER);
+
+        TextView mScheduleText = (TextView) rootView.findViewById(R.id.calendartext);
+        mScheduleText.setText("Semana " + index);
 
         mListView = (ListView) rootView.findViewById(R.id.schedule_listview);
-        Bundle arg = getArguments();
-       int index = arg.getInt(ARG_SECTION_NUMBER);
+
 
 
         mWeeklyAdapter = new ScheduleAdapter(index, getActivity());
