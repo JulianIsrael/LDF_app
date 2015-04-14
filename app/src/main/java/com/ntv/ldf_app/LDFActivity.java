@@ -6,18 +6,33 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import android.support.v13.app.FragmentPagerAdapter;
+
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+
 
 public class LDFActivity extends ActionBarActivity implements ActionBar.TabListener
 {
-   static LDFScheduleFragment scheduleFragment = new LDFScheduleFragment();
-   static LDFListFragment teamListFragment = new LDFListFragment();
+//   static LDFScheduleFragment scheduleFragment ;
+   static LDFListFragment teamListFragment  = LDFListFragment.newInstance() ;
+static LayoutInflater inflater;
+    private static final String ARG_SECTION_NUMBER = "section_number";
+
+    ViewPager mViewPager;
+    SectionsPagerAdapter mSectionsPagerAdapter;
+    private com.melnykov.fab.FloatingActionButton newBtn;
 
 
     @Override
@@ -26,11 +41,40 @@ public class LDFActivity extends ActionBarActivity implements ActionBar.TabListe
         setContentView(R.layout.activity_ldf);
 
 
+
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
+        // mSectionsPagerAdapter.notifyDataSetChanged();
+
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setOffscreenPageLimit(10);
+
+
+        newBtn = (com.melnykov.fab.FloatingActionButton) findViewById(R.id.fab);
+
+        // When swiping between different sections, select the corresponding
+        // tab. We can also use ActionBar.Tab#select() to do this if we have
+        // a reference to the Tab.
+        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+              /*  actionBar.setSelectedNavigationItem(position);*/
+            }
+        });
+
+
+
+
+        /*
+        teamListFragment = new LDFListFragment();
+        scheduleFragment = new LDFScheduleFragment();
+
        FragmentTransaction mFragmentTransaction = getFragmentManager().beginTransaction();
    //     mFragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         mFragmentTransaction.add(android.R.id.content, scheduleFragment, "schedule");
         mFragmentTransaction.addToBackStack(null).commit();
-
+*/
 
     /*   final ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);*/
@@ -93,12 +137,109 @@ public class LDFActivity extends ActionBarActivity implements ActionBar.TabListe
 
     public void onButtonClicked(View view){
 
+
+      //  View v =   inflater.inflate(R.layout.list_view_item,);
         FragmentTransaction mFragmentTransaction = getFragmentManager().beginTransaction();
         mFragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        mFragmentTransaction.add(android.R.id.content, teamListFragment, "teamList");
-        mFragmentTransaction.hide(scheduleFragment).addToBackStack(null).commit();
+
+        mFragmentTransaction.add(android.R.id.content, teamListFragment, "teamList").addToBackStack(null).commit();
+/*        mFragmentTransaction.hide(scheduleFragment).addToBackStack(null).commit();*/
 
 
+    }
+
+ /*   @Override
+    protected void onStop() {
+        clearBackStack();
+        super.onStop();
+    }*/
+
+    private void clearBackStack() {
+        FragmentManager manager = getFragmentManager();
+        if (manager.getBackStackEntryCount() > 0) {
+            FragmentManager.BackStackEntry first = manager.getBackStackEntryAt(0);
+            manager.popBackStack(first.getId(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        }
+    }
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        private Map<String, LDFScheduleContent> mPageReferenceMap = new HashMap<String, LDFScheduleContent>();
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        public LDFScheduleContent getFragment(String key) {
+
+            return mPageReferenceMap.get(key);
+        }
+
+        private  String makeFragmentName(int viewId, int index) {
+            return "android:switcher:" + viewId + ":" + index;
+        }
+
+        @Override
+        public android.app.Fragment getItem(int position) {
+            // getItem is called to instantiate the fragment for the given page.
+            // Return a PlaceholderFragment (defined as a static inner class below).
+
+            String tag = makeFragmentName(mViewPager.getId(),(int) getItemId(position));
+            LDFScheduleContent ldfScheduleContent =   LDFScheduleContent.newInstance(position + 1);
+
+            mPageReferenceMap.put(tag, ldfScheduleContent);
+
+            return  ldfScheduleContent;
+
+        }
+
+        public @Nullable
+        android.app.Fragment getFragmentForPosition(int position)
+        {
+            String tag = makeFragmentName(mViewPager.getId(),(int) getItemId(position));
+            android.app.Fragment fragment = getFragmentManager().findFragmentByTag(tag);
+            return fragment;
+        }
+
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public int getCount() {
+            // Show 10 total pages.
+            return 10;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            Locale l = Locale.getDefault();
+            switch (position) {
+                case 0:
+                    return getString(R.string.title_section1).toUpperCase(l);
+                case 1:
+                    return getString(R.string.title_section2).toUpperCase(l);
+                case 2:
+                    return getString(R.string.title_section3).toUpperCase(l);
+                case 3:
+                    return getString(R.string.title_section4).toUpperCase(l);
+                case 4:
+                    return getString(R.string.title_section5).toUpperCase(l);
+                case 5:
+                    return getString(R.string.title_section6).toUpperCase(l);
+                case 6:
+                    return getString(R.string.title_section7).toUpperCase(l);
+                case 7:
+                    return getString(R.string.title_section8).toUpperCase(l);
+                case 8:
+                    return getString(R.string.title_section9).toUpperCase(l);
+                case 9:
+                    return getString(R.string.title_section10).toUpperCase(l);
+            }
+            return null;
+        }
     }
 
 }

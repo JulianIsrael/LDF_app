@@ -87,6 +87,7 @@ public class CustomArrayAdapter extends ArrayAdapter<ExpandableListItem> {
         imgView.setImageBitmap(getCroppedBitmap(BitmapFactory.decodeResource(getContext()
                 .getResources(), object.getImgResource(), null)));
         textView.setText(object.getText());
+        textView.setSingleLine(false);
 
         convertView.setLayoutParams(new ListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT,
                 AbsListView.LayoutParams.WRAP_CONTENT));

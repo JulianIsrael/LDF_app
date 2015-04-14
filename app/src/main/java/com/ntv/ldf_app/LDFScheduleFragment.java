@@ -1,3 +1,4 @@
+/*
 package com.ntv.ldf_app;
 
 import android.app.Fragment;
@@ -17,9 +18,11 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+*/
 /**
  * Created by Jose on 3/14/2015.
- */
+ *//*
+
 public class LDFScheduleFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
@@ -36,7 +39,8 @@ public class LDFScheduleFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       //  super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_schedule, container, false);
+     */
+/*   View rootView = inflater.inflate(R.layout.fragment_schedule, container, false);
 
 
 
@@ -46,20 +50,25 @@ public class LDFScheduleFragment extends Fragment {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        mViewPager.setOffscreenPageLimit(3);
+        mViewPager.setOffscreenPageLimit(10);
         setRetainInstance(true);
 
         newBtn = (com.melnykov.fab.FloatingActionButton) rootView.findViewById(R.id.fab);
-        newBtn.setType(FloatingActionButton.TYPE_MINI);
+
         // When swiping between different sections, select the corresponding
         // tab. We can also use ActionBar.Tab#select() to do this if we have
         // a reference to the Tab.
         mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
-              /*  actionBar.setSelectedNavigationItem(position);*/
+              *//*
+*/
+/*  actionBar.setSelectedNavigationItem(position);*//*
+*/
+/*
             }
         });
+*//*
 
 
         return rootView;
@@ -113,7 +122,7 @@ public class LDFScheduleFragment extends Fragment {
         @Override
         public int getCount() {
             // Show 10 total pages.
-            return 3;
+            return 10;
         }
 
         @Override
@@ -146,3 +155,4 @@ public class LDFScheduleFragment extends Fragment {
     }
 
 }
+*/

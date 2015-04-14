@@ -32,6 +32,7 @@ public class Match {
     private void setmTime(String mTime) {
         this.mTime = mTime;
     }
+
     public void setDate(String date) {
         this.mDate = date;
     }

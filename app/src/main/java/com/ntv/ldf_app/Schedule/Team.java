@@ -13,15 +13,15 @@ public class Team {
     private  int mTeamID, mTeamImage;
     private String mName, mStadium, mProfile;
     private int mPJ, mDG, mPoints, mTeamRank;
-    private List<Players> mPlayersList;
-    private List<Match> mMatchList;
+    private List<Players> mPlayersList = new ArrayList<Players>();
+    private List<String> mMatchList = new ArrayList<String>();
 
     // public constructor
     public Team( int teamID) {
         this.mTeamID = teamID;
         onSaveTeam();
-        onCreatePlayerList();
         onSavePlayerList();
+        onCreateTeamMatch();
     }
 
     //   Setters
@@ -104,11 +104,11 @@ public class Team {
         return mPlayersList;
     }
 
-    public List<Match> getmMatchList() {
+    public List<String> getmMatchList() {
         return mMatchList;
     }
 
-    public void addMatchList(List<Match> mMatchList) {
+    public void addMatchList(List<String> mMatchList) {
         this.mMatchList = mMatchList;
     }
 
@@ -119,7 +119,7 @@ public class Team {
         mPlayersList.add(player);
     }
 
-    private void addMatch(Match match){
+    private void addMatch(String match){
         mMatchList.add(match);
     }
 
@@ -128,15 +128,10 @@ public class Team {
         mPlayersList.get(index);
     }
 
-    public void getMatch(int index){
-        mMatchList.get(index);
+    public String getMatch(int index){
+       return mMatchList.get(index);
     }
 
-
-    private void onCreatePlayerList(){
-        List playerList = new ArrayList<Players>();
-        addPlayersList(playerList);
-    }
 
     private void onSaveTeam(){
         for (int i = 0; i <AppConstant.mTeamArrayList.length; i++)
@@ -161,6 +156,32 @@ public class Team {
                addPlayer(playersToAdd);
            }
         }
+    }
+
+    private void onCreateTeamMatch(){
+        for (int i = 0; i < AppConstant.mMatchArrayList.length ; i++) {
+            for (int j = 0; j < AppConstant.mMatchArrayList[i].length  ; j++) {
+                String matchList = null;
+                if(AppConstant.mMatchArrayList[i][j][1] == mTeamID ) {
+                    matchList = mName + " VS " + AppConstant.mTeamArrayList[AppConstant.mMatchArrayList[i][j][2]][1] +" "+ AppConstant.mMatchTimeDateArray[i][j][0];
+                }else if( AppConstant.mMatchArrayList[i][j][2] == mTeamID){
+                    matchList = mName + " VS " + AppConstant.mTeamArrayList[AppConstant.mMatchArrayList[i][j][1]][1]+" "+ AppConstant.mMatchTimeDateArray[i][j][0];
+                }
+                    addMatch(matchList);
+                }
+            }
+        }
+
+    public String onCreateMatchListString(){
+        String listToShow = "";
+        for (int j = 0; j <getmMatchList().size() ; j++) {
+            if (getMatch(j) != null) {
+                listToShow = listToShow + getMatch(j) + "\n" ;
+            }
+
+        }
+
+        return listToShow;
     }
 
 

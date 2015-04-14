@@ -60,8 +60,6 @@ public class LDFScheduleContent extends Fragment {
 
         mListView = (ListView) rootView.findViewById(R.id.schedule_listview);
 
-
-
         mWeeklyAdapter = new ScheduleAdapter(index, getActivity());
         mListView.setAdapter(mWeeklyAdapter);
 

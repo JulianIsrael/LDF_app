@@ -7,22 +7,30 @@ import com.ntv.ldf_app.R;
  */
 public class AppConstant {
 
+public String [][] x = {
+        {"hola","casa"},
+        {"hola","casa"},
+        {"hola","casa","carro","nevera"},
+        {"hola","casa","carro","nevera","llaves"}
+};
+
+
 
    public static String[][] mTeamArrayList = {
            {
-                   "0", "Atletico Pantoja", "Olimpico Felix Sánchez" , "PROFILE"
+                   "0", "Atletico Pantoja", "Olimpico Felix Sanchez" , "PROFILE"
            },
            {
-                   "1", "O&M FC", "Olimpico Félix Sánchez" , "PROFILE"
+                   "1", "O&M FC", "Olimpico Félix Sanchez" , "PROFILE"
            },
            {
-                   "2", "Moca FC", " Bragaña García, Moca" , "PROFILE"
+                   "2", "Moca FC", " Bragana Garcia, Moca" , "PROFILE"
            },
            {
                    "3", "Cibao FC", "Estadio Cibao FC" , "PROFILE"
            },
            {
-                   "4", "Barcelona Atlético", "Olimpico Félix Sánchez" , "PROFILE"
+                   "4", "Barcelona Atletico", "Olimpico Felix Sánchez" , "PROFILE"
            },
            {
                    "5", "Delfines del Este FC", "Estadio Francisco Micheli" , "PROFILE"
@@ -85,22 +93,22 @@ public class AppConstant {
                 {
                         { 0,5, 1},{ 0, 4, 3},{ 0, 0, 1}
                 },
-              //  "5", "Delfines del Este FC""O&M Fútbol Club"
+
                 {
                         { 1,1, 2},{ 1, 0, 1},{ 1, 0, 1}
                 },
                 {
-                        { 2,0, 1},{ 2, 0, 1},{ 2, 0, 1}
+                        { 2,0, 1},{ 2, 0, 1},{ 2, 9, 1}
                 },
                 {
-                        { 3,0, 1},{ 3, 0, 1},{ 3, 0, 1}
+                        { 3,0, 1},{ 3, 0, 1},{ 3, 9, 1}
                 },
 
                 {
-                        { 4,0, 1},{ 4, 0, 1},{ 4, 0, 1}
+                        { 4,6, 1},{ 4, 8, 1},{ 4, 0, 1}
                 },
                 {
-                        { 5,0, 1},{ 5, 0, 1},{ 5, 0, 1}
+                        { 5,0, 1},{ 5, 10, 3},{ 5, 10, 1}
                 },
                 {
                         { 6,0, 1},{ 6, 0, 1},{ 6, 0, 1}

@@ -8,15 +8,6 @@ public class Players {
     String mPlayerName;
     int mPlayerNum, mTeamID;
 
-    public Players(String mPlayerName) {
-        this.mPlayerName = mPlayerName;
-    }
-
-    public Players(String mPlayerName, int mPlayerNum) {
-        this.mPlayerName = mPlayerName;
-        this.mPlayerNum = mPlayerNum;
-    }
-
     public Players(String mPlayerName, int mPlayerNum, int mTeamID) {
         this.mPlayerName = mPlayerName;
         this.mPlayerNum = mPlayerNum;
