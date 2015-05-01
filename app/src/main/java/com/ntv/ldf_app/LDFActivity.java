@@ -48,7 +48,7 @@ static LayoutInflater inflater;
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        mViewPager.setOffscreenPageLimit(10);
+        mViewPager.setOffscreenPageLimit(21);
 
 
         newBtn = (com.melnykov.fab.FloatingActionButton) findViewById(R.id.fab);
@@ -138,12 +138,11 @@ static LayoutInflater inflater;
     public void onButtonClicked(View view){
 
 
-      //  View v =   inflater.inflate(R.layout.list_view_item,);
+
         FragmentTransaction mFragmentTransaction = getFragmentManager().beginTransaction();
         mFragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-
         mFragmentTransaction.add(android.R.id.content, teamListFragment, "teamList").addToBackStack(null).commit();
-/*        mFragmentTransaction.hide(scheduleFragment).addToBackStack(null).commit();*/
+
 
 
     }
