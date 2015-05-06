@@ -296,20 +296,23 @@ public class AppConstant {
 
 
         public static int[] mImageList = {
-                R.mipmap.atletico_vega_real,
+                R.mipmap.pantojatransparent_copy,
+                R.mipmap.oym_transparent_new_copy,
+                R.mipmap.moca_fc_e14239432361701_copy,
+                R.mipmap.cibao_futbol_club_e1423943315771_copy,
+                R.mipmap.clubbarcelonatransparent_copy,
+                R.mipmap.delfinesdeleste1_copy,
+                R.mipmap.a_logo_copy,
+                R.mipmap.atlantico_transparten_copy,
+                R.mipmap.atletico_vega_real1_copy,
+                R.mipmap.baugerfc2_copy,
+                R.mipmap.delfinesdeleste1_copy,
                 R.mipmap.ic_launcher,
-                R.mipmap.atletico_vega_real,
-                R.mipmap.bauger_fc,
-                R.mipmap.ic_launcher,
-                R.mipmap.atletico_vega_real,
-                R.mipmap.bauger_fc,
-                R.mipmap.ic_launcher,
-                R.mipmap.atletico_vega_real,
-                R.mipmap.atletico_vega_real,
-                R.mipmap.atletico_vega_real,
                 };
 
         }
+
+
 
 
 

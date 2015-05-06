@@ -8,6 +8,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
+        android:textColor="#FFFFFF"
         android:id="@+id/calendartext"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -16,10 +17,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/schedule_listview"
-        android:layout_centerVertical="true"
+        android:dividerHeight="1dp"
+android:divider="#ffffff"
+        android:background="#ffffff"
+        android:layout_below="@+id/calendartext"
         android:layout_alignParentStart="true"
-        android:dividerHeight="5dp"
-        android:padding="5dp" />
+        android:headerDividersEnabled="true"
+        android:footerDividersEnabled="true" />
 
 
 </RelativeLayout>

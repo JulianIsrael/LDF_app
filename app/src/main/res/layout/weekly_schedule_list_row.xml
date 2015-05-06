@@ -2,81 +2,62 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:background="#FFFFFF"
+   >
 
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="false"
-        android:background="@color/bright_foreground_disabled_material_dark"
+        android:background="#212121"
         android:gravity="center"
         android:id="@+id/linearLayout">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/linearLayout2"
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/image_team1"
             android:layout_gravity="center_vertical"
-            android:gravity="center_vertical|left"
-            android:layout_alignTop="@+id/vs_id"
-            android:layout_alignParentStart="false"
-            android:layout_toStartOf="@+id/vs_id">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/time"
+            android:layout_alignStart="@+id/time" />
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:id="@+id/image_team1"
-                android:layout_margin="10dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="team1"
-                android:id="@+id/team_1_id" />
-
-        </LinearLayout>
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/image_team2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="23dp"
+            android:layout_below="@+id/time1"
+            android:layout_alignParentEnd="true" />
 
         <TextView
-            android:layout_width="40dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="VS"
-            android:id="@+id/vs_id"
-            android:layout_gravity="center_vertical"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:gravity="center" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Sabado 01"
+            android:id="@+id/time"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center_vertical" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout3"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="12:00 PM"
+            android:id="@+id/time1"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_gravity="center_vertical"
-            android:gravity="center_vertical|right"
-            android:layout_alignTop="@+id/vs_id"
-            android:layout_alignParentEnd="false"
-            android:layout_toEndOf="@+id/vs_id">
+            android:layout_alignParentTop="true"
+            android:layout_alignEnd="@+id/image_team2" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="team2"
-                android:id="@+id/team_2_id"
-                android:singleLine="false" />
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:id="@+id/image_team2"
-                android:layout_margin="10dp" />
-
-        </LinearLayout>
 
     </RelativeLayout>
 
@@ -84,24 +65,18 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#212121"
         android:layout_below="@+id/linearLayout"
         android:gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="12:00 PM"
-            android:id="@+id/time"
-            android:layout_alignTop="@+id/stadium"
-            android:layout_toStartOf="@+id/stadium"
-            android:layout_margin="5dp" />
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="La Cañita"
+            android:textColor="#FFFFFF"
             android:id="@+id/stadium"
             android:layout_alignParentBottom="true"
             android:layout_margin="5dp" />

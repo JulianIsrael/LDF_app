@@ -51,11 +51,9 @@ public class LDFListFragment extends Fragment {
 
         for (int i = 0; i < NUM_OF_CELLS; i++) {
             Team myTeam = new Team(i);
-            mData.add(new ExpandableListItem(AppConstant.mTeamArrayList[i][1], AppConstant.mImageList[1],
+            mData.add(new ExpandableListItem(AppConstant.mTeamArrayList[i][1], AppConstant.mImageList[i],
                     CELL_DEFAULT_HEIGHT, myTeam.onCreateMatchListString()));
         }
-
-
 
          CustomArrayAdapter adapter = new CustomArrayAdapter(getActivity(), R.layout.list_view_item, mData);
 

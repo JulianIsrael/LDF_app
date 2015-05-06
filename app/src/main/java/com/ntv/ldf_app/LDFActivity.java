@@ -209,7 +209,7 @@ static LayoutInflater inflater;
         @Override
         public int getCount() {
             // Show 10 total pages.
-            return 10;
+            return 21;
         }
 
         @Override

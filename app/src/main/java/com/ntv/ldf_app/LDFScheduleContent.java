@@ -1,5 +1,6 @@
 package com.ntv.ldf_app;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import android.support.v4.view.ViewPager;
@@ -56,7 +57,10 @@ public class LDFScheduleContent extends Fragment {
         int index = arg.getInt(ARG_SECTION_NUMBER);
 
         TextView mScheduleText = (TextView) rootView.findViewById(R.id.calendartext);
-        mScheduleText.setText("Semana " + index);
+       // mScheduleText.setText("Semana " + index);
+        mScheduleText.setText("VS");
+        mScheduleText.setTypeface(Typeface.DEFAULT_BOLD);
+
 
         mListView = (ListView) rootView.findViewById(R.id.schedule_listview);
 
